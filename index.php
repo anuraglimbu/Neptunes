@@ -35,7 +35,8 @@ if (strpos(strtolower($_SERVER['HTTP_USER_AGENT']),'windows') > 0) {
 }
  
 if ($mobile_browser > 0) {
-   header("Location: mobile/index.php");
+   //header("Location: mobile/index.php");
+   header("Location: desktop/index.php");
 }
 else {
    header("Location: desktop/index.php");
