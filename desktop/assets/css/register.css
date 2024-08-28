@@ -216,6 +216,26 @@ html,body
 	display: block;
 }
 
+@media screen and (max-width: 768px) {
+	#loginContainer
+	{
+		width: 88%;
+	}
+
+	#inputContainer
+	{
+		width: 100%;
+		padding: 45px 0;
+		float: none;
+	}
+
+	#loginText
+	{
+		padding: 45px 0;
+	}
+
+}
+
 @media screen and (max-width : 400px)
 {
 	#loginText
