@@ -3,7 +3,7 @@
       
    <nav class="navBar">
       <span class="logo" role="link" tabindex="0" onclick="openPage('index.php')">
-         <img src="assets/images/icons/logo.png">  <span class="logoTxt">SLOTIFY</span>
+         <img src="assets/images/icons/logo.png">  <span class="logoTxt">NEPTUNES</span>
       </span>
 
 
