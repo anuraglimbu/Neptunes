@@ -297,24 +297,27 @@ body
 
 .logo
 {
-	padding: 10px 0;
-	display: block;
+	padding: 12px 0;
+	width: 100%;
+	display: flex;
+	align-items: center;
 	letter-spacing: 1px;
 }
 
 .logoTxt
 {
-	margin: 5px auto;
-	font-size: 31px;
-	font-weight: 700;
-	position: absolute;
+	display: inline-block;
+	height: fit-content;
+	width: 100%;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 80%;
+    text-align: end;
 }
 
 .logo img
 {
-	width: 32px;
-	margin-bottom: 15px;
-	position: relative;
+	width: 18px;
 }
 
 .logo img:hover
