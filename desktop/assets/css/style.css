@@ -229,7 +229,7 @@ body
 #navBarContainer
 {
 	background-color: #000;
-	width: 220px;
+	width: 250px;
 	height: 100vh;
 	position: fixed;
 	top: 0;
@@ -308,9 +308,9 @@ body
 
 #mainViewContainer
 {
-	margin-left: 220px;
+	margin-left: 250px;
     padding-bottom: 90px;
-    width: calc(100% - 220px);
+    width: calc(100% - 250px);
 }
 
 #mainContent
