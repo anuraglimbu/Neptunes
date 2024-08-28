@@ -17,7 +17,7 @@
 
 <html>
 <head>
-	<title>Welcome to Slotify!</title>
+	<title>Welcome to Neptunes!</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
