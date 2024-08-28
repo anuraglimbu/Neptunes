@@ -283,6 +283,58 @@ body
 	width: 100%;
 }
 
+#mobileNavHeaderContainer
+{
+	display: none;
+	background-color: #000;
+	height: fit-content;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+.navHeader
+{
+	display: flex;
+    align-items: center;
+    place-content: space-between;
+    height: fit-content;
+    width: 100%;
+    padding: 12px;
+}
+
+.navHeader .logoHeader
+{
+	min-width: 182px;
+}
+
+.navHeader .hamburger
+{
+	font-size: 22px;
+    width: 38px;
+    cursor: pointer;
+}
+
+#mobileNavBarContainer
+{
+	/* display: none; */
+	margin-top: 50px;
+	background-color: #000;
+	width: 250px;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	right: -250px;
+	transition: right ease-in-out .5s;
+}
+
+#mobileNavBarContainer.show
+{
+	right: 0;
+}
+
 #navBarContainer
 {
 	background-color: #000;
@@ -768,6 +820,10 @@ input:focus
 		display: none;
 	}
 
+	#mobileNavHeaderContainer
+	{
+		display: block;
+	}
 	body
 	{
 		min-width: 100%; 
@@ -778,6 +834,11 @@ input:focus
 		margin-left: 0px;
 		padding-bottom: 90px;
 		width: 100%;
+	}
+
+	#mainContent
+	{
+		padding: 60px 20px 0 20px;
 	}
 
 	.gridViewItem {
@@ -819,5 +880,9 @@ input:focus
 	#topPlayerControlMobileFragment .buttons
 	{
 		display: table;
+	}
+
+	.searchContainer .searchInput {
+		font-size: 44px;
 	}
 }

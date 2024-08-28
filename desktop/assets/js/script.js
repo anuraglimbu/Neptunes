@@ -43,6 +43,15 @@ $(document).on("change","select.playlist", function()
 			});
 	});
 
+$(document).ready(
+	function() {
+		$("#sidebarToggle").click(function() {
+			console.log("sidebarToggle clicked");
+			$("#mobileNavBarContainer").toggleClass("show");
+		});
+	}
+);
+
 function updateEmail(emailClass)
 {
 	var emailValue = $("." + emailClass).val();
@@ -81,12 +90,22 @@ function guestRedirect()
 	window.location.href="../../register.php";
 }
 
+function checkGuestRedirect() {
+	if (userLoggedIn === "guest") {
+		window.location.href="register.php";
+	}
+}
+
 function openPage(url)
 {
 	if (timer != null)
 
 	{
 		clearTimeout(timer);
+	}
+
+	if ((url === 'yourMusic.php') || (url === 'settings.php')) {
+		checkGuestRedirect();
 	}
 
 	if(url.indexOf("?") == -1)
@@ -96,7 +115,7 @@ function openPage(url)
 
 	var encodedUrl = encodeURI(url + "&userLoggedIn=" + userLoggedIn);
 	console.log(url);
-
+	$("#mobileNavBarContainer").removeClass("show");
 	$("#mainContent").load(encodedUrl);
 	$("body").scrollTop(0);
 	history.pushState(null, null, url);
