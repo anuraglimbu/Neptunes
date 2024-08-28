@@ -1,0 +1,38 @@
+name: neptunes
+
+services:
+  neptunes-server:
+    container_name: neptunes-server
+    build:
+      context: .
+    ports:
+      - 9000:80
+    depends_on:
+      neptunes-db:
+        condition: service_healthy
+
+  neptunes-db:
+    container_name: neptunes-db
+    image: mysql:latest
+    ports:
+      - :3306
+    volumes:
+      - neptunes-db-data:/var/lib/mysql/
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_ROOT_PASSWORD: "password"
+      MYSQL_USER: "neptunes"
+      MYSQL_PASSWORD: "password"
+      MYSQL_DATABASE: "neptunes"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "--silent"]
+      interval: 5s
+      timeout: 3s
+      retries: 2
+
+volumes:
+  neptunes-db-data:
+# secrets:
+#   db-password:
+#     file: db/password.txt
+
