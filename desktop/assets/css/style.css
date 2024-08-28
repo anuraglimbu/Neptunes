@@ -11,7 +11,6 @@ body
     display: none; 
 }
 
-
 body
 {
 	background-color: #181818;
@@ -210,6 +209,7 @@ body
 	display: inline-block;
 	width: 50%;
 	min-width: 90px;
+	text-overflow: ellipsis;
 }
 
 #nowPlayingMobileLeft .albumArtwork
@@ -223,20 +223,26 @@ body
 
 #nowPlayingMobileLeft .trackInfo
 {
-	display: table;
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 300px;
 }
 
 #nowPlayingMobileLeft .trackInfo .trackName
 {
 	margin: 6px 0;
-	display: inline-block;
-	width: 100%
+	display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #nowPlayingMobileLeft .trackInfo .artistName span
 {
 	font-size: 12px;
 	color: #a0a0a0;
+	overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #nowPlayingMobileRight
