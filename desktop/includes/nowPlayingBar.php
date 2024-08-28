@@ -21,10 +21,10 @@
       setTrack(newPlaylist[0], newPlaylist, false);
       updateVolumeProgressBar(audioElement.audio);
 
-      $("#nowPlayingBarContainer").on("mousedown touchstart mousemove touchmove", function(e)
-         {
-            e.preventDefault();
-         });
+      // $("#nowPlayingBarContainer").on("mousedown touchstart mousemove touchmove", function(e)
+      //    {
+      //       e.preventDefault();
+      //    });
 
       $(".playbackBar .progressBar").mouseover(function(e)
       {
@@ -275,6 +275,7 @@
 
    function playSong()
    {
+      console.log("playSong() Called")
       if(audioElement.audio.currentTime == 0)
       {
          $.post("includes/handlers/ajax/updatePlays.php", { songId: audioElement.currentlyPlaying.id });
@@ -287,6 +288,7 @@
 
    function pauseSong()
    {
+      console.log("pauseSong() Called")
       $(".controlButton.play").show();
       $(".controlButton.pause").hide();
          audioElement.pause();      
@@ -323,7 +325,55 @@
                   <div id="nowPlayingCenter">
                      
                      <div class="content playerControls">
-                           
+                        <div id="topPlayerControlMobileFragment">
+                           <div id="nowPlayingMobileLeft">
+                              <div class="content">
+                                 <span class="albumLink">
+                                    <img role="link" tabindex="0" src="" class="albumArtwork">
+                                 </span>
+
+                                 <div class="trackInfo">
+                                    
+                                    <span class="trackName">
+                                       <span role="link" tabindex="0">   </span>
+                                    </span>
+
+                                    <span class="artistName">
+                                       <span role="link" tabindex="0"></span>
+                                    </span>
+
+                                 </div>
+                              </div>
+                           </div>
+                           <div id="nowPlayingMobileRight">
+                              <div class="buttons">
+                                 <button class="controlButton shuffle" title="Shuffle Button" onclick="setShuffle()">
+                                    <img src="assets/images/icons/shuffle.png" alt="Shuffle">
+                                 </button>
+
+                                 <button class="controlButton previous" title="Previous Button" onclick="prevSong()">
+                                    <img src="assets/images/icons/previous.png" alt="Previous">
+                                 </button>
+
+                                 <button class="controlButton play" title="Play Button" onclick="playSong()" ontap="playSong()">
+                                    <img src="assets/images/icons/play.png" alt="Play">
+                                 </button>
+
+                                 <button class="controlButton pause" title="Pause Button" style="display: none;" onclick="pauseSong()" ontap="pauseSong()">
+                                    <img src="assets/images/icons/pause.png" alt="Pause">
+                                 </button>
+
+                                 <button class="controlButton next" title="Next Button" onclick="nextSong()">
+                                    <img src="assets/images/icons/next.png" alt="Next">
+                                 </button>
+
+                                 <button class="controlButton repeat" title="Repeat Button" onclick="setRepeat()">
+                                    <img src="assets/images/icons/repeat.png" alt="Repeat">
+                                 </button>
+                              </div>
+                           </div>
+                        </div>
+
                         <div class="buttons">
                            <button class="controlButton shuffle" title="Shuffle Button" onclick="setShuffle()">
                               <img src="assets/images/icons/shuffle.png" alt="Shuffle">
